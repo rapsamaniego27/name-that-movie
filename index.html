@@ -7,8 +7,8 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	
 	
-	<meta name="og:title" property="og:title" content="Note Along">
-	<meta name="description" content="Follow along to notes displayed on the screen and be a better musician">
+	<meta name="og:title" property="og:title" content="Name That Movie!">
+	<meta name="description" content="A game to test the best team to guess the movie soundtracks">
 	<meta property="og:image"
 		content="https://github.com/rapsamaniego27/note-along/blob/master/images/thumbnail.JPG?raw=true">
 	<meta property="og:url" content="https://note-along.netlify.app/">
@@ -54,19 +54,22 @@
 					</div>
 
 					<!-- Modal Answers -->
-					<div id="modal-overlay" class="modal-hide">
-						<div id="modal-box" class="modal-hide">
+					<div id="modal-overlay" class="">
+						<div id="modal-box" class="">
 							<a href="#" id="modal-close"><i class="fas fa-window-close fa-2x"></i></i></a>
+							<!-- This is where we display our answers -->
 							<h1 id="movie-title">Movie Title</h1>
 							<img src="#" id="movie-image" width="200" align="center">
 							
-
 
 						</div>
 					</div>
 				</div>
 
 				<div class="gamer-table">
+					<span class="gamer-heading__container">
+							<h2 class="gamer-heading">Score</h2>
+					</span>
 					<div class="gamer-table-container">
 						<div class="gamer gamer-one-col">
 
@@ -74,9 +77,9 @@
 							<img src="images/coin.png" width="40" class="gamer-coin"></div>
 
 							<div class="gamer-score"><div class="score">0</div></div>
-							<div id="score-one">
-								<button id="dec-score-one"><i class="fas fa-minus"></i></button>
-								<button id="inc-score-one"><i class="fas fa-plus"></i></button>
+							<div class="score-controls" id="score-one">
+								<button class="score-controls__dec" id="dec-score-one"><i class="fas fa-minus"></i></button>
+								<button class="score-controls__inc" id="inc-score-one"><i class="fas fa-plus"></i></button>
 							</div>
 						</div>
 						
@@ -86,9 +89,9 @@
 							<img src="images/coin.png" width="40" class="gamer-coin"></div>
 
 							<div class="gamer-score"><div class="score">0</div></div>
-							<div id="score-two">
-								<button id="dec-score-two"><i class="fas fa-minus"></i></button>
-								<button id="inc-score-two"><i class="fas fa-plus"></i></button>
+							<div class="score-controls" id="score-two">
+								<button class="score-controls__dec" id="dec-score-two"><i class="fas fa-minus"></i></button>
+								<button class="score-controls__inc" id="inc-score-two"><i class="fas fa-plus"></i></button>
 							</div>
 						</div>
 						
@@ -98,9 +101,9 @@
 							<img src="images/coin.png" width="40" class="gamer-coin"></div>
 
 							<div class="gamer-score"><div class="score">0</div></div>
-							<div id="score-three">					
-								<button id="dec-score-three"><i class="fas fa-minus"></i></button>
-								<button id="inc-score-three"><i class="fas fa-plus"></i></button>
+							<div class="score-controls" id="score-three">					
+								<button class="score-controls__dec" id="dec-score-three"><i class="fas fa-minus"></i></button>
+								<button class="score-controls__inc" id="inc-score-three"><i class="fas fa-plus"></i></button>
 							</div>
 						</div>
 						
@@ -122,8 +125,8 @@
 
 
 	</div>
-	<div id="cover-overlay" >
-		<div id="cover-box" >
+	<div id="cover-overlay" class="modal-hide">
+		<div id="cover-box" class="modal-hide">
 				<h1 class="cover-title">Name that Movie!</h1>
 
 				<ul class="cover-text">
@@ -137,9 +140,9 @@
 	</div>
 
 
-	<script src="scripts/api.js" defer></script>
-<script src="scripts/jquery.js" defer></script>
-<script src="scripts/script.js" defer></script>
+<script src="scripts/api.js"></script>
+<script src="scripts/jquery.js"></script>
+<script src="scripts/script.js"></script>
 
 
 </body>

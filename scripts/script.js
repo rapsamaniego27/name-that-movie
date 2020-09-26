@@ -191,7 +191,7 @@ setTimeout(() => {
         score.html(parScore);
 
         effect = new Audio();
-        effect.src = "sound-effects/story.mp3";
+        effect.src = "sound-effects/cancel.mp3";
         effect.play();
 
       });
@@ -214,7 +214,6 @@ setTimeout(() => {
       customWindow = window.open('', '_blank', '');
       customwindow.close();
     });
-
 
 
   });

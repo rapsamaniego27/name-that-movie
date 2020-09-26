@@ -1,8 +1,18 @@
 
+		:root{
+			 --primary: #B26144;
+			 --dark-gray: #808080;
+			 --light-gray: #D7D5D5;
+		}
+		
 		body{
 			margin:0;
 			padding:0;
 			font-family: 'Montserrat', sans-serif;
+			background-image: url(../images/dark-orchestra.jpg);
+			background-position: center;
+	    background-repeat: no-repeat;
+	    background-size: cover;
 		}
 		p, li{
 			margin:0 auto;
@@ -10,21 +20,12 @@
 		}
 
 		.container{
-			position: absolute;
-			left:0;
-			top:0;
 			width: 100%;
-			height: 100%;
 		}
 
 		.background{
-			height: 100%;
 			width: 100%;
-			background: url(../images/dark-orchestra.jpg);
-			background-position: center;
-	    background-repeat: no-repeat;
-	    background-size: cover;
-			position: fixed;
+			
 		}
 
 		.page-title{
@@ -45,22 +46,22 @@
 
 		.content{
 			overflow: hidden;
-			width: 90%;
+			max-width: 1366px;
+			margin:0 auto;
+			display:flex;
+			flex-direction: space-between;
 		}
 
 		.player-container{
 			width: 50%;
-			float: left;
 		}
 
 		.player{
-			margin:50px 0 50px 0;
-			background-color:#D7D5D5;
+			margin:50px auto;
+			background-color: var(--light-gray);
 			padding:25px;
 			color:#333;
-			width:300px;
-			margin-left: auto;
-			margin-right: auto;
+			max-width:300px;
 			border-radius: 10px;
 			padding-bottom: 30px;
 		}
@@ -89,7 +90,7 @@
 		    width: 50px;
 		    height: 50px;
 		    border: 0;
-		    background-color:#B26144;
+		    background-color:var(--primary);
 		    border-radius: 50%;
 		    outline: none;
 		    cursor: pointer;
@@ -140,7 +141,7 @@
 			font-family: 'Open Sans', sans-serif;
 			text-align: center;
 			font-weight: bold;
-			color:#B26144;
+			color:var(--primary);
 			font-size:24px;
 		}
 
@@ -152,7 +153,7 @@
 
 		.btn{
 			border:none;
-			background-color:#B26144;	
+			background-color:var(--primary);	
 			padding:5px 10px;
 			color:#ffffff;
 			cursor: pointer;
@@ -175,35 +176,37 @@
 
 		#fill{
 		    height: 5px;
-		    background-color:#B26144;
+		    background-color:var(--primary);
 		    border-radius: 20px;
 		}
 		#handle{
 		    width: 8px;
 		    height: 8px;
-		    background-color:#B26144;
+		    background-color:var(--primary);
 		    border-radius: 50%;
 		    margin-left: -5px;
 		    transform: scale(2);
 		}
 
 		#seek-bar{
-    width: 250px;
+    width: 80%;
     height: 5px;
-    background-color:gray;
+    background-color: var(--dark-gray);
     display: flex;
     border-radius: 50px;
     margin-left: 25px;
     cursor: pointer;
 }	
-#playlist{
+#playlist,
+#playlist li,
+#playlist li a{
 	padding: 0;
 	text-align: center;
-	width: 200px;
-	margin-left: auto;
-	margin-right:auto;
 	list-style-type: none;
 	visibility: hidden;
+	height:0;
+	width:0;
+	pointer-events: none;
 }
 
 #playlist li a{
@@ -217,40 +220,41 @@
 
 
 #modal-overlay{
-	width: 50%;
-	float: right;
-	transition: all 1s;
-	-webkit-transition: all 1s;
-	-moz-transition: all 1s;
-
+	width: 40%;
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	position:relative;
+	margin-top:30px;
 }
 
 #modal-box{
 	background-color:#D7D5D5;
-	padding: 20px 10px 20px 10px;
+	padding: 10px 0 20px 0;
 	height: auto;
 	border-radius:20px;
-	transform: translate(-30px, 30px);
-	-webkit-transform: translate(-30px, 30px);
-	-moz-transform: translate(-30px, 30px);
+	width:100%;
 }
 
 #modal-close{
 	top: 10px;
 	left: 20px;
 	position: absolute;
-	color:#B26144;
+	color:var(--primary);
 }
 
 .modal-hide{
 	visibility: hidden;
 	opacity: 0;
+	pointer-events: none;
+	height:0;
+	width:0;
 }
 
 #movie-title{
 	text-align: center;
 	font-weight: bold;
-	font-size:36px;
+	font-size:clamp(24px, 5vw, 36px);
 }
 
 #movie-image{
@@ -259,30 +263,37 @@
 	display: block;
 }
 
-#images{
+#images,
+#images li,
+#images li img{
 	visibility: hidden;
 	opacity: 0;
+	width:0;
+	height:0;
+	pointer-events: none;
 }
+
+
+
 /*Player Table*/
 
 .gamer-table{
 	margin-top: -10px;
-	background: #808080;
+	background: var(--dark-gray);
 	width: 60%;
 	margin-right: auto;
 	margin-left: auto;
-	display: block;
-	height: auto;
-	clear: both;
 	color:#ffffff;
 	font-family: 'Open Sans', sans-serif;
 	border-radius: 10px;
+	position:relative;
 }
 
 .gamer-table-container{
 	padding: 10px 40px;
-	text-align: center;
-
+ display:flex;
+	justify-content:center;
+	align-items: center;
 }
 
 .gamer{
@@ -290,35 +301,33 @@
 }
 
 .gamer-score{
-	background-color:#B26144;
+	background-color:var(--primary);
 	border-radius: 50%;
 	width: 110px;
 	height: 110px;
 	margin:0 auto;
-	float: right;
-	
+	position:relative;
+}
+
+.gamer{
+	padding: 0 10px 0 10px;
+	position: relative;
+	text-align: center;
 }
 
 .gamer-one-col{
 	color:#4fabe8;
-	padding: 0 10px 0 10px;
-	position: relative;
-	text-align: center;
+
 	
 }
 
 .gamer-two-col{
 	color:#e85e50;
-	padding: 0 10px 0 10px;
-	position: relative;
 
 }
 
 .gamer-three-col{
 	color:#00cc98;
-	padding: 0 10px 0 10px;
-	position: relative;
-
 }
 
 .gamer-bounce{
@@ -374,87 +383,42 @@
 	top:0;
 	left: 97px;
 	position: absolute;
-
 }
 
 .score{
 	padding: 10px 0 10px 0;
 	color:#ffffff;
-	font-size: 68px;
-	overflow: hidden;
+	font-size: clamp(40px, 5vw, 68px);
+	position:absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
- #score-one{
- 	padding:10px 0 0 0;
-	clear: both;
-	text-align: center;
-	color:#B26144;
-	}
-
-	#score-two{
-	padding:10px 0 0 0;
-	clear: both;
-	text-align: center;
-	color:#B26144;
-	}
-
-	#score-three{
-	padding:10px 0 0 0;
-	clear: both;
-	text-align: center;
-	color:#B26144;
+	.score-controls button{
+			border:0;
+			color:var(--primary) !important;
+			padding: 5px 15px;
+			background-color: #D7D5D5;
+			cursor: pointer;		
+			margin-top:6px;
 	}
 
 
-	#inc-score-one{
-		border:0;
-		color:#B26144;
-		padding: 5px 15px;
-		background-color: #D7D5D5;
-		cursor: pointer;
-	}
+.gamer-heading__container{
+		position:absolute;
+		top:-24px;
+		left:20px;
+		background:var(--primary);
+		padding:10px 15px;
+}
 
-	#inc-score-two{
-		border:0;
-		color:#B26144;
-		padding: 5px 15px;
-		background-color: #D7D5D5;
-		cursor: pointer;
-	}
-
-
-	#inc-score-three{
-		border:0;
-		color:#B26144;
-		padding: 5px 15px;
-		background-color: #D7D5D5;
-		cursor: pointer;
-	}
-
-
-	#dec-score-one{
-		border:0;
-		color:#B26144;
-		padding: 5px 15px;
-		background-color: #D7D5D5;
-		cursor: pointer;
-	}
-
-	#dec-score-two{
-		border:0;
-		color:#B26144;
-		padding: 5px 15px;
-		background-color: #D7D5D5;
-		cursor: pointer;
-	}
-
-
-	#dec-score-three{
-		border:0;
-		color:#B26144;
-		padding: 5px 15px;
-		background-color: #D7D5D5;
-		cursor: pointer;
+	.gamer-heading{
+		text-align: center;
+		font-size: clamp(16px, 2vw, 24px);
+		line-height:24px;
+		padding:0;
+		margin:0;
 	}
 
 
@@ -498,8 +462,8 @@
 
 .cover-title{
 	text-align: center;
-	font-size:60px;
-	color:#B26144;
+	font-size:clamp(30px, 5vw, 60px);
+	color:var(--primary);
 	font-family: 'Montserrat', sans-serif;
 }
 
@@ -526,7 +490,7 @@
 }
 
 .cover-text li a:hover{
-	color:#B26144;
+	color:var(--primary);
 	text-decoration: underline;
 	
 }
@@ -535,8 +499,80 @@
 	padding: 20px;
 }
 
+/* Media queries */
+
 @media only screen and (min-width: 1400px)  { 
   	.gamer-table{
-  		margin-top: 40px !important;
+				margin-top: 40px !important;
+			}
 }
 
+@media only screen and (max-width:800px){
+	.content{
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	#modal-overlay{
+		width:80vw;
+	}
+
+	.player{
+		margin: 0 auto;
+	}
+
+	.player-container{
+		width:80vw;
+	}
+
+	.page-title{
+		padding:0;
+	}
+
+	.gamer-table{
+		margin-top:40px;
+	}
+
+	.gamer-score{
+		width:80px;
+		height:80px;
+	}
+
+	.score-controls{
+		 margin:10px 0 0 0;
+			color:var(--primary);
+			display:flex;
+			justify-content:space-between;
+			align-items: center;
+	}
+
+		.gamer-icon{
+		width: 30px;
+		height: 26px;
+		left: 70px;
+	}
+
+		.gamer-icon svg{
+			font-size:1.25em;		
+			position:absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+		.gamer-table{
+			width:80vw;
+		}
+}
+
+
+@media only screen and (max-width:480px){
+		.gamer-table-container{
+		flex-direction: column;
+	}
+
+	.gamer{
+		margin-top:16px;
+	}
+}
