@@ -202,6 +202,7 @@
 #playlist li,
 #playlist li a{
 	padding: 0;
+	margin:0;
 	text-align: center;
 	list-style-type: none;
 	visibility: hidden;
@@ -272,6 +273,8 @@
 	width:0;
 	height:0;
 	pointer-events: none;
+	padding:0;
+	margin:0;
 }
 
 
@@ -281,7 +284,7 @@
 .gamer-table{
 	margin-top: -10px;
 	background: var(--dark-gray);
-	width: 60%;
+	max-width: 600px;
 	margin-right: auto;
 	margin-left: auto;
 	color:#ffffff;
@@ -291,7 +294,7 @@
 }
 
 .gamer-table-container{
-	padding: 10px 40px;
+	padding: 20px 40px;
  display:flex;
 	justify-content:center;
 	align-items: center;
@@ -308,6 +311,7 @@
 	height: 110px;
 	margin:0 auto;
 	position:relative;
+	display:inline-block;
 }
 
 .gamer{
@@ -329,6 +333,10 @@
 
 .gamer-three-col{
 	color:#00cc98;
+}
+
+.fa-users{
+	font-size:1.5em;
 }
 
 .gamer-bounce{
@@ -384,6 +392,13 @@
 	top:0;
 	left: 97px;
 	position: absolute;
+}
+
+.gamer-icon i{
+		position:absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
 }
 
 .score{
@@ -554,12 +569,8 @@
 		left: 70px;
 	}
 
-		.gamer-icon svg{
-			font-size:1.25em;		
-			position:absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
+		.gamer-icon i{
+			font-size:1em;		
 		}
 
 		.gamer-table{

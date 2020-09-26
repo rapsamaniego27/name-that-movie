@@ -1,6 +1,6 @@
 
 footer{
- width:80%;
+ width:100%;
  margin:0 auto;
  display:-webkit-box;
  display:-ms-flexbox;
@@ -52,6 +52,6 @@ footer{
 
 .footer-texts{
   padding: 15px 0;
-  color: #fff;
+  color: var(--white);
   text-align: center;
 }
