@@ -1,0 +1,76 @@
+[
+ {
+  "title": "Star Wars",
+  "path": "songs/01Star-Wars.mp3",
+  "image": "movie-images/01Star-Wars.jpg"
+ },
+ {
+  "title": "Mission Impossible",
+  "path": "songs/02Mission-Impossible.mp3",
+  "image": "movie-images/02Mission-Impossible.jpg"
+ },
+ {
+  "title": "The Greatest Showman",
+  "path": "songs/03The-Greatest-Showman.mp3",
+  "image": "movie-images/03The-Greatest-Showman.jpg"
+ },
+ {
+  "title": "Superman",
+  "path": "songs/04Superman.mp3",
+  "image": "movie-images/04Superman.jpg"
+ },
+
+ {
+  "title": "The Pink Panther",
+  "path": "songs/05The-Pink-Panther.mp3",
+  "image": "movie-images/05The-Pink-Panther.jpg"
+ },
+
+ {
+  "title": "Titanic",
+  "path": "songs/06Titanic.mp3",
+  "image": "movie-images/06Titanic.jpg"
+ },
+
+ {
+  "title": "The Avengers",
+  "path":"songs/07The-Avengers.mp3",
+  "image": "movie-images/07The-Avengers.jpg"
+ },
+ {
+  "title": "Jaws",
+  "path":"songs/08Jaws.mp3",
+  "image": "movie-images/08Jaws.jpg"
+ },
+ {
+  "title": "Indiana Jones",
+  "path":"songs/09Indiana-Jones.mp3",
+  "image": "movie-images/09Indiana-Jones.jpg"
+ },
+ {
+  "title": "Psycho",
+  "path":"songs/10Psycho.mp3",
+  "image": "movie-images/10Psycho.jpg"
+ },
+ {
+  "title": "Pirates of the Carribean",
+  "path":"songs/11Pirates-of-the-Carribbean.mp3",
+  "image": "movie-images/11Pirates-of-the-Carribbean.jpg"
+ },
+ {
+  "title": "Rocky",
+  "path":"songs/12Rocky.mp3",
+  "image": "movie-images/12Rocky.jpg"
+ },
+ {
+  "title": "The Incredibles",
+  "path":"songs/13Incredibles.mp3",
+  "image": "movie-images/13Incredibles.jpg"
+ },
+ {
+  "title": "Harry Potter",
+  "path":"songs/14Harry-Potter.mp3",
+  "image": "movie-images/14Harry-Potter.jpg"
+ }
+]
+
