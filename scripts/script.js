@@ -43,11 +43,13 @@ setTimeout(() => {
     $('#play').click(function () {
 
       playimg = $('#play img').attr('src');
-      /* Hopefully to remove audio delay on the web*/
-      song.pause();
-      song.currentTime = 0;
+      
 
       if (song.paused) {
+        /* Hopefully to remove audio delay on the web*/
+        song.pause();
+        song.currentTime = 0;
+        
         song.play();
         $('#play img').attr("src", "images/Pause.png");
       } else {
