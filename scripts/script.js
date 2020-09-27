@@ -174,12 +174,13 @@ setTimeout(() => {
             coin.removeClass('coin-reveal');
           });
 
-        effect = new Audio();
-        effect.src = "sound-effects/coin.mp3";
+        
 
         if(isMobile()){
           playEffect('sound-effects/coin.mp3');
         }else{
+          effect = new Audio();
+          effect.src = "sound-effects/coin.mp3";
           effect.play();
         }
 
@@ -195,12 +196,12 @@ setTimeout(() => {
 
         score.html(parScore);
 
-        effect = new Audio();
-        effect.src = "sound-effects/cancel.mp3";
-
+      
         if (isMobile()) {
           playEffect('sound-effects/cancel.mp3');
         } else {
+          effect = new Audio();
+          effect.src = "sound-effects/cancel.mp3";
           effect.play();
         }
 
