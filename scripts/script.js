@@ -33,9 +33,6 @@ setTimeout(() => {
     currentSong = 0;
     song = new Audio();
     song.src = songs[currentSong];
-
-    /* Importing Howler */
-    
     fillBar = $('#fill');
 
     movieTitle.html(titles[currentSong]);
@@ -43,11 +40,11 @@ setTimeout(() => {
     $('#play').click(function () {
 
       playimg = $('#play img').attr('src');
-      
 
       if (song.paused) {
         song.play();
         $('#play img').attr("src", "images/Pause.png");
+
       } else {
         song.pause();
         $('#play img').attr("src", "images/Play.png");
@@ -74,11 +71,6 @@ setTimeout(() => {
       movieImg.attr("src", images[currentSong]);
       $('#play img').attr("src", "images/Pause.png");
       song.src = songs[currentSong];
-      /* Hopefully to remove audio delay on the web*/
-      song.pause();
-      song.currentTime = 0;
-
-      /* Plays the sound on next */
       song.play();
 
     });
@@ -98,10 +90,6 @@ setTimeout(() => {
       modalOverlay.addClass('modal-hide');
       modalBox.addClass('modal-hide');
       song.src = songs[currentSong];
-      /* Hopefully to remove audio delay on the web*/
-      song.pause();
-      song.currentTime = 0;
-
       song.play();
 
     });
@@ -185,9 +173,15 @@ setTimeout(() => {
             icon.removeClass('gamer-bounce');
             coin.removeClass('coin-reveal');
           });
-        
-        /* Plays the sound effect */
-        playEffect('sound-effects/coin.mp3');
+
+        effect = new Audio();
+        effect.src = "sound-effects/coin.mp3";
+
+        if(isMobile()){
+          return playEffect('sound-effects/coin.mp3');
+        }else{
+          effect.play();
+        }
 
       });
     }
@@ -201,23 +195,36 @@ setTimeout(() => {
 
         score.html(parScore);
 
-        /* Plays the sound effect */
-        playEffect('sound-effects/cancel.mp3');
+        effect = new Audio();
+        effect.src = "sound-effects/cancel.mp3";
+
+        if (isMobile()) {
+          return playEffect('sound-effects/cancel.mp3');
+        } else {
+          effect.play();
+        }
 
       });
-    }
-
-    function playEffect(fileSrc){
-      const effect = new Howl({
-        src: fileSrc
-      });
-
-      effect.play();
     }
 
     incScore();
     decScore();
 
+    function playEffect(fileSrc) {
+      createjs.Sound.play(fileSrc);
+    }
+
+    function isMobile() {
+      if (navigator.userAgent.match(/Android/i) ||
+        navigator.userAgent.match(/webOS/i) ||
+        navigator.userAgent.match(/iPhone/i) ||
+        navigator.userAgent.match(/iPad/i) ||
+        navigator.userAgent.match(/iPod/i) ||
+        navigator.userAgent.match(/BlackBerry/i) ||
+        navigator.userAgent.match(/Windows Phone/i))
+
+        return true;
+    }
 
     /*Cover Modal*/
 
