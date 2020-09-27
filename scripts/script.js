@@ -178,7 +178,7 @@ setTimeout(() => {
         effect.src = "sound-effects/coin.mp3";
 
         if(isMobile()){
-          return playEffect('sound-effects/coin.mp3');
+          playEffect('sound-effects/coin.mp3');
         }else{
           effect.play();
         }
@@ -199,7 +199,7 @@ setTimeout(() => {
         effect.src = "sound-effects/cancel.mp3";
 
         if (isMobile()) {
-          return playEffect('sound-effects/cancel.mp3');
+          playEffect('sound-effects/cancel.mp3');
         } else {
           effect.play();
         }
