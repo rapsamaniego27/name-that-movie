@@ -177,7 +177,7 @@ setTimeout(() => {
         
 
         if(isMobile()){
-          playEffect('sound-effects/coin.mp3');
+          createjs.Sound.play('sound-effects/coin.mp3');
         }else{
           effect = new Audio();
           effect.src = "sound-effects/coin.mp3";
@@ -198,7 +198,7 @@ setTimeout(() => {
 
       
         if (isMobile()) {
-          playEffect('sound-effects/cancel.mp3');
+          createjs.Sound.play('sound-effects/cancel.mp3');
         } else {
           effect = new Audio();
           effect.src = "sound-effects/cancel.mp3";
@@ -210,10 +210,6 @@ setTimeout(() => {
 
     incScore();
     decScore();
-
-    function playEffect(fileSrc) {
-      createjs.Sound.play(fileSrc);
-    }
 
     function isMobile() {
       if (navigator.userAgent.match(/Android/i) ||
