@@ -33,6 +33,9 @@ setTimeout(() => {
     currentSong = 0;
     song = new Audio();
     song.src = songs[currentSong];
+
+    /* Importing Howler */
+    
     fillBar = $('#fill');
 
     movieTitle.html(titles[currentSong]);
@@ -40,11 +43,13 @@ setTimeout(() => {
     $('#play').click(function () {
 
       playimg = $('#play img').attr('src');
+      /* Hopefully to remove audio delay on the web*/
+      song.pause();
+      song.currentTime = 0;
 
       if (song.paused) {
         song.play();
         $('#play img').attr("src", "images/Pause.png");
-
       } else {
         song.pause();
         $('#play img').attr("src", "images/Play.png");
@@ -71,6 +76,11 @@ setTimeout(() => {
       movieImg.attr("src", images[currentSong]);
       $('#play img').attr("src", "images/Pause.png");
       song.src = songs[currentSong];
+      /* Hopefully to remove audio delay on the web*/
+      song.pause();
+      song.currentTime = 0;
+
+      /* Plays the sound on next */
       song.play();
 
     });
@@ -90,6 +100,10 @@ setTimeout(() => {
       modalOverlay.addClass('modal-hide');
       modalBox.addClass('modal-hide');
       song.src = songs[currentSong];
+      /* Hopefully to remove audio delay on the web*/
+      song.pause();
+      song.currentTime = 0;
+
       song.play();
 
     });
@@ -173,10 +187,9 @@ setTimeout(() => {
             icon.removeClass('gamer-bounce');
             coin.removeClass('coin-reveal');
           });
-
-        effect = new Audio();
-        effect.src = "sound-effects/coin.mp3";
-        effect.play();
+        
+        /* Plays the sound effect */
+        playEffect('sound-effects/coin.mp3');
 
       });
     }
@@ -190,11 +203,18 @@ setTimeout(() => {
 
         score.html(parScore);
 
-        effect = new Audio();
-        effect.src = "sound-effects/cancel.mp3";
-        effect.play();
+        /* Plays the sound effect */
+        playEffect('sound-effects/cancel.mp3');
 
       });
+    }
+
+    function playEffect(fileSrc){
+      const effect = new Howl({
+        src: fileSrc
+      });
+
+      effect.play();
     }
 
     incScore();
